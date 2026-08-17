@@ -216,7 +216,31 @@ function Contact() {
 function App() {
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24, restDelta: .001 })
-  return <><motion.div className="scroll-progress" style={{ scaleX }} /><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main"><Hero /><About /><Skills /><Experience /><Projects /><Credentials /><Contact /></main><footer><div className="container"><a className="brand" href="#home"><span>Z</span><b>Zafar Ullah</b></a><p>AI Engineer · Mardan, Pakistan</p><p>© {new Date().getFullYear()} Zafar Ullah</p></div></footer></>
+  return (
+    <>
+      <motion.div className="scroll-progress" style={{ scaleX }} />
+      <a className="skip-link" href="#main">Skip to content</a>
+      <Header />
+      <main id="main">
+        <Hero /><About /><Skills /><Experience /><Projects /><Credentials /><Contact />
+      </main>
+      <footer>
+        <div className="container footer-layout">
+          <div className="footer-meta">
+            <a className="brand" href="#home"><span>Z</span><b>Zafar Ullah</b></a>
+            <p>AI Engineer · Mardan, Pakistan</p>
+            <p>© {new Date().getFullYear()} Zafar Ullah</p>
+          </div>
+          <div className="flyrank-verification">
+            <a href="https://internship.flyrank.ai" target="_blank" rel="noreferrer" aria-label="Verify FlyRank Internship Credentials" className="flyrank-badge-anchor">
+              <img src="https://flyrank.ai/badges/ml-track-graduate.svg" alt="Official FlyRank ML Track Graduate Badge" width="160" height="45" loading="lazy" />
+            </a>
+            <p className="verification-text">FlyRank Machine Learning Track (Week 6+ Verified)</p>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
 }
 
 export default App
